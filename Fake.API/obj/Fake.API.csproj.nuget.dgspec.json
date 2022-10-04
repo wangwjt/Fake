@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\vs_workspace\\Fake.API\\Fake.API\\Fake.API.csproj": {}
+    "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj": {}
   },
   "projects": {
-    "D:\\vs_workspace\\Fake.API\\Fake.API\\Fake.API.csproj": {
+    "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\vs_workspace\\Fake.API\\Fake.API\\Fake.API.csproj",
+        "projectUniqueName": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj",
         "projectName": "Fake.API",
-        "projectPath": "D:\\vs_workspace\\Fake.API\\Fake.API\\Fake.API.csproj",
+        "projectPath": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj",
         "packagesPath": "C:\\Users\\wangw\\.nuget\\packages\\",
-        "outputPath": "D:\\vs_workspace\\Fake.API\\Fake.API\\obj\\",
+        "outputPath": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\program\\VisualStudio2022\\Shared\\NuGetPackages"
@@ -49,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
         }
       }
     }
