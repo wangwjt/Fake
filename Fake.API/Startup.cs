@@ -1,3 +1,4 @@
+using Fake.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -20,10 +21,11 @@ namespace Fake.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // 该方法是管理所有依赖服务注入的
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<ITouristRouteRepository,MockTouristRoute>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +51,6 @@ namespace Fake.API
 
             app.UseEndpoints(endpoints =>
             {
-                // 
                 endpoints.MapControllers();
             });
         }
