@@ -6,7 +6,7 @@ namespace Fake.API.Services
 {
     public class MockTouristRoute : ITouristRouteRepository
     {
-        public IEnumerable<TouristRoute> GetAll()
+        public IEnumerable<TouristRoute> GetAll(string keyword)
         {
             List<TouristRoute> list = new List<TouristRoute>();
             list.Add(new TouristRoute(Guid.NewGuid().ToString(), "title", "描述", new Decimal(59.6468), 7786786, DateTime.Now));

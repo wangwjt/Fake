@@ -24,9 +24,9 @@ namespace Fake.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllTouristRoute()
+        public IActionResult GetAllTouristRoute([FromQuery(Name = "keyword")] string keyword)
         {
-            IEnumerable<Models.TouristRoute> data = _touristRouteRepository.GetAll();
+            IEnumerable<Models.TouristRoute> data = _touristRouteRepository.GetAll(keyword);
             IEnumerable<TouristRouteDTO> result = _autoMapper.Map<IEnumerable<TouristRouteDTO>>(data);
             return Ok(result); // Ok():代表http状态码200
         }

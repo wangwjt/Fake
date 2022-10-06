@@ -16,9 +16,18 @@ namespace Fake.API.Services.Impl
             _dbContext = dbContext;
         }
 
-        public IEnumerable<TouristRoute> GetAll()
+        public IEnumerable<TouristRoute> GetAll(string keyword)
         {
-            return _dbContext.TouristRoutes;
+            // 延迟执行 可以叠加查询条件
+            IQueryable<TouristRoute> result =  _dbContext.TouristRoutes;
+            // 非空判断
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                keyword = keyword.Trim();
+                result = result.Where(t => t.Title == keyword);
+            }
+            // 执行.ToList()后，查询数据；具有相同功能的还有.FirstOrDefault();区别是一个返回列表、一个返回单个数据
+            return result.ToList();
         }
 
         public TouristRoute GetTouristRoute(string id)
