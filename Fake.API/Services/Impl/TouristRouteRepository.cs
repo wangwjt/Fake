@@ -34,5 +34,15 @@ namespace Fake.API.Services.Impl
         {
             return _dbContext.TouristRoutes.FirstOrDefault(n => n.Id == id.ToString());
         }
+
+        public void AddTouristRoute(TouristRoute param)
+        {
+            if (param == null)
+            {
+                throw new ArgumentNullException(nameof(param));
+            }
+            _dbContext.TouristRoutes.Add(param);
+            _dbContext.SaveChanges();
+        }
     }
 }

@@ -6,6 +6,11 @@ namespace Fake.API.Services
 {
     public class MockTouristRoute : ITouristRouteRepository
     {
+        public void AddTouristRoute(TouristRoute param)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<TouristRoute> GetAll(string keyword)
         {
             List<TouristRoute> list = new List<TouristRoute>();

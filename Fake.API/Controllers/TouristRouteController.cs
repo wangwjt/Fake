@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using AutoMapper;
 using System.Collections;
+using Fake.API.Models;
 
 namespace Fake.API.Controllers
 {
@@ -51,6 +52,14 @@ namespace Fake.API.Controllers
 
             TouristRouteDTO touristRouteDTO = _autoMapper.Map<TouristRouteDTO>(touristRoute);
             return Ok(touristRouteDTO);
+        }
+
+        [HttpPost]
+        public IActionResult AddToTouristRoute([FromBody ] AddTouristRouteDTO param)
+        {
+            TouristRoute touristRoute = _autoMapper.Map<TouristRoute>(param);
+            _touristRouteRepository.AddTouristRoute(touristRoute);
+            return Ok("OK");
         }
     }
 }
