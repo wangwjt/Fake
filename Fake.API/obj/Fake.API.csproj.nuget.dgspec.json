@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj": {}
+    "D:\\vs_workspace\\Fake\\Fake.API\\Fake.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj": {
+    "D:\\vs_workspace\\Fake\\Fake.API\\Fake.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj",
+        "projectUniqueName": "D:\\vs_workspace\\Fake\\Fake.API\\Fake.API.csproj",
         "projectName": "Fake.API",
-        "projectPath": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\Fake.API.csproj",
+        "projectPath": "D:\\vs_workspace\\Fake\\Fake.API\\Fake.API.csproj",
         "packagesPath": "C:\\Users\\wangw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wangw\\Source\\Repos\\Fake\\Fake.API\\obj\\",
+        "outputPath": "D:\\vs_workspace\\Fake\\Fake.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\program\\VisualStudio2022\\Shared\\NuGetPackages"
@@ -43,13 +43,24 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,10 +1,14 @@
+using Fake.API.DataBase;
 using Fake.API.Services;
+using Fake.API.Services.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration; // 这是对配置文件的依赖
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +18,7 @@ namespace Fake.API
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,7 +30,12 @@ namespace Fake.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<ITouristRouteRepository,MockTouristRoute>();
+            services.AddTransient<ITouristRouteRepository,TouristRouteRepository>();
+            services.AddDbContext<AppDBContext>(opption =>
+            {
+                // 从appsetting配置文件中取
+                opption.UseMySql(Configuration["DBContext:DBContextString"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

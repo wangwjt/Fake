@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Fake.API.Models
 {
@@ -7,18 +9,29 @@ namespace Fake.API.Models
     /// </summary>
     public class TouristRoute
     {
-        public Guid Id { get; set; }
+        [Key]
+        [Column("id")]
+        public string Id { get; set; }
+        [Required]
+        [MaxLength(64)]
+        [Column("title")]
         public string Title { get; set; }
+        [Required]
+        [MaxLength(200)]
+        [Column("desc")]
         public string Desc { get; set; }
+        [Column("original_price", TypeName ="decimal(18,2)")]
         public decimal OriginalPrice { get; set; }
-        public double? DiscountPresent { get; set; }
+        [Column("discount_present")]
+        public long? DiscountPresent { get; set; }
+        [Column("create_time")]
         public DateTime CreateTime { get; set; }
 
         public TouristRoute()
         {
         }
 
-        public TouristRoute(Guid id, string title, string desc, decimal originalPrice, double? discountPresent, DateTime createTime)
+        public TouristRoute(string id, string title, string desc, decimal originalPrice, long? discountPresent, DateTime createTime)
         {
             Id = id;
             Title = title;
