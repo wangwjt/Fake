@@ -36,6 +36,8 @@ namespace Fake.API
                 // 从appsetting配置文件中取
                 opption.UseMySql(Configuration["DBContext:DBContextString"]);
             });
+            // 注册automapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
