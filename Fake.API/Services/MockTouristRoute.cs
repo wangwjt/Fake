@@ -14,7 +14,7 @@ namespace Fake.API.Services
             return list;
         }
 
-        public TouristRoute GetTouristRoute(Guid id)
+        public TouristRoute GetTouristRoute(string id)
         {
             return new TouristRoute(Guid.NewGuid().ToString(), "这是Title", "这是描述", new Decimal(25.4), 257, DateTime.Now);
         }

@@ -21,7 +21,7 @@ namespace Fake.API.Services.Impl
             return _dbContext.TouristRoutes;
         }
 
-        public TouristRoute GetTouristRoute(Guid id)
+        public TouristRoute GetTouristRoute(string id)
         {
             return _dbContext.TouristRoutes.FirstOrDefault(n => n.Id == id.ToString());
         }

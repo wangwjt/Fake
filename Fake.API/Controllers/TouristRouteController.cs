@@ -22,10 +22,14 @@ namespace Fake.API.Controllers
         public IActionResult GetAllTouristRoute()
         {
             IEnumerable<Models.TouristRoute> data = _touristRouteRepository.GetAll();
-            return Ok(data);
+            return Ok(data); // Ok():代表http状态码200
         }
 
-
-
+        [HttpGet("{id}")]  // tourist_route/all/{id}
+        public IActionResult GetTouristRouteById(string id)
+        {
+            Models.TouristRoute touristRoute = _touristRouteRepository.GetTouristRoute(id);
+            return Ok(touristRoute);
+        }
     }
 }

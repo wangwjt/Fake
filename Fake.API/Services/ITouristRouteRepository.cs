@@ -11,6 +11,6 @@ namespace Fake.API.Services
         IEnumerable<TouristRoute> GetAll();
 
         // 获取单个
-        TouristRoute GetTouristRoute(Guid id);
+        TouristRoute GetTouristRoute(string id);
     }
 }
