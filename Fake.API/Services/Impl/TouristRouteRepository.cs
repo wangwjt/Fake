@@ -44,5 +44,16 @@ namespace Fake.API.Services.Impl
             _dbContext.TouristRoutes.Add(param);
             _dbContext.SaveChanges();
         }
+
+        public int Save()
+        {
+            return _dbContext.SaveChanges();
+        }
+
+        public void Delete(TouristRoute param)
+        {
+            _dbContext.Remove(param);
+            _dbContext.SaveChanges();
+        }
     }
 }

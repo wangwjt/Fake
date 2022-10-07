@@ -13,6 +13,13 @@ namespace Fake.API.Services
         // 获取单个
         TouristRoute GetTouristRoute(string id);
 
+        // 添加
         void AddTouristRoute(TouristRoute param);
+
+        // 保存
+        public int Save();
+
+        // 删除
+        public void Delete(TouristRoute param);
     }
 }

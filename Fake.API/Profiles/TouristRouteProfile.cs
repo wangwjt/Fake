@@ -12,13 +12,15 @@ namespace Fake.API.Profiles
             // arg1: 源对象
             // arg2: 目标对象
             CreateMap<TouristRoute, TouristRouteDTO>() // CreateMap 会自动映射名字相同的字段
-                // dest => dest.CreateTime : 指出特殊处理的目标字段       （dest：目标）
-                // opt => opt.MapFrom(a => a.ToString()) : 特殊处理的操作 （opt：原始）
+                                                       // dest => dest.CreateTime : 指出特殊处理的目标字段       （dest：目标）
+                                                       // opt => opt.MapFrom(a => a.ToString()) : 特殊处理的操作 （opt：原始）
                 .ForMember(dest => dest.CreateTime, opt => opt.MapFrom(src => src.ToString()));
 
             CreateMap<AddTouristRouteDTO, TouristRoute>()
-                .ForMember(dest => dest.Id,opt => opt.MapFrom(src => Guid.NewGuid().ToString()))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid().ToString()))
                 .ForMember(dest => dest.CreateTime, opt => opt.MapFrom(src => DateTime.Now));
+
+            CreateMap<UpdateTouristRouteDTO, TouristRoute>();
         }
     }
 }
